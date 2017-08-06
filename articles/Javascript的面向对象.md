@@ -10,6 +10,9 @@
 
 类相当于一张蓝图，它定义了对象的属性与方法，包含数据的形式以及对数据的处理。而对象则是类的实例化，它拥有属性与方法，能够能够接受数据，处理数据，将数据传达给其它对象。
 
+![类](../imgs/class.jpg)
+![对象](../imgs/object.jpg)
+
 ## Javascript 中没有 '类'
 
 与传统的面对对象编程语言不同的是，在 ES6 之前的相当长的一段时间内 Javascript 没有类的声明语句（现在 ES6 新增了 class 关键字）只有一些近似类的语法元素如 new 和 instanceof，但是可以通过一些方法近似实现类的功能。
@@ -64,7 +67,25 @@ class Child extends Father {
 多态指的是同一个操作可能在不同的对象上得到不一样的结果
 
 ```js
-var 
+var working = function (person) {
+  person.work()
+}
+
+var Teacher = function () {}
+Teacher.prototype.work = function () {
+  console.log('Teach student.')
+}
+
+var Doctor = function () {}
+Doctor.prototype.work = function () {
+  console.log('cure the sickness')
+}
+
+var kevin = new Teacher()
+var martin = new Doctor()
+
+working(kevin)
+working(martin)
 
 ```
 
