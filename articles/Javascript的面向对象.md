@@ -20,16 +20,27 @@
 
 要在 Javascript 中创建一个类的实例化对象，需要调用一个跟类同名的函数， 即构造函数。
 
-## 结合构造函数模式于原型模式
-
-目前在 Javascript 中构造一个类最流行的方式是结合构造函数模式和原型模式
-
 ## 封装
 
-封装最大的好处是保护数据以及实现，将他们隐藏起来。
+封装最大的好处是保护数据以及实现，将他们隐藏起来。许多语言提供了 private, public, proteced 等关键字来提供不同的访问权限, 在 Javascript 中并没有提供, 不过依赖变量的作用域可以实现对 public, private 这两种特性的模拟. 通过创建函数作用域来隐藏想要保护的数据.
+
+```js
+  var myBasketball = (function () {
+    var price = 100 // 私有变量 (private)
+    return {
+      getPrice: function () {
+        return price
+      },
+      setPrice: function (value) {
+        price = value
+      }
+    }
+  })()
+```
 
 ## 基于原型的继承
 
+目前在 Javascript 中构造一个类最流行的方式是结合构造函数模式和原型模式
 要在 Javascript 中实现类的继承，需要做的是把子类的原型对象 prototype 指向父类的一个实例，基于原型链的关联机制是实现继承的本质。
 
 ```js
@@ -49,23 +60,20 @@ class Child extends Father {
 
 ## 多态
 
+多态的实际含义是: 同一操作作用在不同的对象上，可以产生不同的解释和不同的执行结果。 给不同的对象发送同一个消息时，这些对象会根据这个消息给出不同的反馈.
 多态指的是同一个操作可能在不同的对象上得到不一样的结果
+
+```js
+var 
+
+```
 
 ## 例子
 
 最后用一个例子来说明以上的概念
 
-
-
-
-
-
 ## 参考资料
 
-
-
-
-
-written by [轻键快码](https://www.github.com/xrr2016) 2017/8/3
+written by [轻键快码](https://www.github.com/xrr2016) 2017/8/6
 
 
