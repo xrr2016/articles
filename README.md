@@ -1,1 +1,5 @@
-# 读数据结构与算法 Javascript 描述
+# Rocket
+
+## LICENSE
+
+MIT
